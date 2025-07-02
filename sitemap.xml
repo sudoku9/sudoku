@@ -1,9 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- 主页 -->
   <url>
     <loc>https://www.99sudoku.com/</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.99sudoku.com/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.99sudoku.com/?lang=zh" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.99sudoku.com/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.99sudoku.com/?lang=it" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.99sudoku.com/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.99sudoku.com/?lang=tr" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.99sudoku.com/?lang=ko" />
   </url>
+
+  <!-- 隐私政策 -->
+  <url>
+    <loc>https://www.99sudoku.com/privacy</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 服务条款 -->
+  <url>
+    <loc>https://www.99sudoku.com/terms</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 联系我们 -->
+  <url>
+    <loc>https://www.99sudoku.com/contact</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 不同难度的数独游戏页面 -->
+  <url>
+    <loc>https://www.99sudoku.com/sudoku/easy</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.99sudoku.com/sudoku/medium</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.99sudoku.com/sudoku/hard</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.99sudoku.com/sudoku/expert</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.99sudoku.com/sudoku/master</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.99sudoku.com/sudoku/extreme</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
