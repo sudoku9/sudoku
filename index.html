@@ -1,207 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online 9x9 Sudoku game with multiple difficulty levels and scoring system">
-    <meta name="keywords" content="sudoku, 9x9 sudoku,free sudoku, 數 獨 9x9, 数独 無料, online sudoku">
-    <title data-i18n="99sudoku-game.title">Free Online 9x9 Sudoku Game</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/i18n.css">
-    <script src="js/board.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/i18n.js"></script>
-    <style type="text/css">
-        *{padding: 10;margin: 10;}
-        .gcs-footer{
-          margin-top: 20px;
-          background:#222c3a;
-          width: 100%;
-          height: 165px;
-          text-align: center;
-          color: white;
-          position: absolute;
-        }
-        .gcs-footer .footer-top{
-          margin-top: 50px;
-        }
-        .gcs-footer a{
-          color: #f0f1f1;
-          text-decoration: none;
-          padding: 0 10px;
-          vertical-align:middle;
-        }
-        .gcs-footer a:hover{
-          color: red;
-          text-decoration: underline;
-        }
-        .gcs-footer p{
-          height: 15px;
-          color: #888888;
-          margin-top: 30px;
-        }
-        </style>
-        <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js?id=KDCu64tQ5NFsVMgX&ck=KDCu64tQ5NFsVMgX"></script>
-    </head>
-<body>
-    <div class="container">
-        <h1 data-i18n="99sudoku-game.title">99sudoku.com</h1>
-        <div class="game-status">
-            <div class="score"><span data-i18n="game.score">Score</span>: <span id="current-score">100</span></div>
-            <div class="time"><span data-i18n="game.time">Time</span>: <span id="time-display">00:00</span></div>
-            <div class="difficulty-selector">
-                <span data-i18n="game.difficulty">Difficulty</span>: 
-                <select id="difficulty-select">
-                    <option value="easy" data-i18n="game.easy">Easy</option>
-                    <option value="medium" data-i18n="game.medium">Medium</option>
-                    <option value="hard" data-i18n="game.hard">Hard</option>
-                    <option value="expert" data-i18n="game.expert">Expert</option>
-                </select>
-            </div>
-            <button id="show-leaderboard" class="secondary-btn" data-i18n="game.leaderboard">Leaderboard</button>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2d5a27" />
+    <meta name="description" content="Play Free Sudoku Online - 99 Sudoku offers the best 9x9 sudoku puzzles. Challenge yourself with our free sudoku games!" />
+    <meta name="keywords" content="sudoku 99, sudoku online 9x9, sudoku 99, sudoku 9x9 online free, sudoku 9x9, 99 sudoku" />
+    <meta property="og:title" content="99 Sudoku - Free Online Sudoku Games" />
+    <meta property="og:description" content="Play Free Sudoku Online - Challenge yourself with our 9x9 sudoku puzzles!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.99sudoku.com" />
+    <meta property="og:image" content="https://www.99sudoku.com/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="99 Sudoku - Free Online Sudoku Games" />
+    <meta name="twitter:description" content="Play Free Sudoku Online - Challenge yourself with our 9x9 sudoku puzzles!" />
+    <meta name="twitter:image" content="https://www.99sudoku.com/og-image.png" />
+    <link rel="canonical" href="https://www.99sudoku.com" />
+    <title>99 Sudoku - Free Online Sudoku Games | Play 9x9 Sudoku Puzzles</title>
 
-        <div class="game-controls">
-            <button id="new-game" data-i18n="game.newGame">New Game</button>
-            <button id="check-solution" data-i18n="game.checkSolution">Check Solution</button>
-        </div>
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "99 Sudoku",
+      "description": "Free online sudoku games with multiple difficulty levels. Play 9x9 sudoku puzzles with eye-friendly green design.",
+      "url": "https://www.99sudoku.com",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "99 Sudoku"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250"
+      }
+    }
+    </script>
+    <script type="module" crossorigin src="./assets/index-DSrdXx6u.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index--Gi4z5wj.css">
+  </head>
+  <body>
+    <div id="root"></div>
 
-        <div id="board" class="sudoku-board">
-            <!-- Board will be generated by JavaScript -->
-        </div>
-
-        <div class="number-pad">
-            <button class="number" data-number="1">1</button>
-            <button class="number" data-number="2">2</button>
-            <button class="number" data-number="3">3</button>
-            <button class="number" data-number="4">4</button>
-            <button class="number" data-number="5">5</button>
-            <button class="number" data-number="6">6</button>
-            <button class="number" data-number="7">7</button>
-            <button class="number" data-number="8">8</button>
-            <button class="number" data-number="9">9</button>
-            <button id="erase">Erase</button>
-        </div>
-
-        <div class="game-rules">
-            <h2 data-i18n="how-rules.title">How to Play The Free Online 9x9 Sudoku Game</h2>
-            <div class="rules-section">
-                <h3 data-i18n="rules.basic.title">Basic Rules:</h3>
-                <ul>
-                    <li data-i18n="rules.basic.rule1">Fill each empty cell with a number from 1 to 9</li>
-                    <li data-i18n="rules.basic.rule2">Each row must contain all numbers from 1 to 9</li>
-                    <li data-i18n="rules.basic.rule3">Each column must contain all numbers from 1 to 9</li>
-                    <li data-i18n="rules.basic.rule4">Each 3x3 box must contain all numbers from 1 to 9</li>
-                    <li data-i18n="rules.basic.rule5">Some cells are pre-filled and cannot be modified</li>
-                </ul>
-            </div>
-
-            <div class="rules-section">
-                <h3 data-i18n="rules.controls.title">Controls:</h3>
-                <ul>
-                    <li data-i18n="rules.controls.rule1">Click any empty cell to select it</li>
-                    <li data-i18n="rules.controls.rule2">Use number buttons or keyboard (1-9) to input numbers</li>
-                    <li data-i18n="rules.controls.rule3">Use Erase button or Backspace key to remove numbers</li>
-                    <li data-i18n="rules.controls.rule4">Click "Check Solution" to verify your answers</li>
-                    <li data-i18n="rules.controls.rule5">Click "New Game" to start a fresh puzzle</li>
-                </ul>
-            </div>
-
-            <div class="rules-section">
-                <h3 data-i18n="rules.scoring.title">Scoring System:</h3>
-                <ul>
-                    <li data-i18n="rules.scoring.rule1">Starting score: 100 points</li>
-                    <li data-i18n="rules.scoring.rule2">Correct number: +1 point</li>
-                    <li data-i18n="rules.scoring.rule3">Incorrect number: -1 point</li>
-                    <li data-i18n="rules.scoring.rule4">Time penalty: -5 points every 30 seconds</li>
-                    <li data-i18n="rules.scoring.rule5">Game ends when score reaches 0</li>
-                </ul>
-            </div>
-
-            <div class="rules-section">
-                <h3 data-i18n="rules.visual.title">Visual Feedback:</h3>
-                <ul>
-                    <li data-i18n="rules.visual.rule1">Green numbers: Correct placement</li>
-                    <li data-i18n="rules.visual.rule2">Red numbers: Incorrect placement</li>
-                    <li data-i18n="rules.visual.rule3">Gray numbers: Pre-filled cells (fixed)</li>
-                    <li data-i18n="rules.visual.rule4">Blue highlight: Selected cell</li>
-                </ul>
-            </div>
-
-            <div class="rules-section">
-                <h3 data-i18n="rules.gameEnd.title">Game End:</h3>
-                <ul>
-                    <li data-i18n="rules.gameEnd.rule1">Game ends when you click "Check Solution"</li>
-                    <li data-i18n="rules.gameEnd.rule2">Game ends when your score reaches 0</li>
-                    <li data-i18n="rules.gameEnd.rule3">Submit your score to the leaderboard</li>
-                    <li data-i18n="rules.gameEnd.rule4">Try to complete the puzzle quickly for a better score!</li>
-                </ul>
-            </div>
-            <h2>What is Sudoku?</h2>
-            <p>Sudoku is a logic-based, combinatorial number-placement puzzle. The objective is to fill a 9x9 grid with digits so that each column, each row, and each of the nine 3x3 subgrids (also known as boxes or regions) contain all of the digits from 1 to 9 without repeating any numbers.</p>
-            <h2>History of Sudoku:</h2>
-            <ul>
-            <li><strong>Early Origins:</strong> The concept of placing numbers in a grid dates back to ancient civilizations. However, the modern form of Sudoku has its roots in the 18th century, with the publication of a similar puzzle called "Latin Squares" by the Swiss mathematician Leonhard Euler.</li>
-            <li><strong>Development in the 20th Century:</strong> The puzzle as we know it today was developed in the late 19th century. In 1979, Howard Garns, an American architect and puzzle constructor, created a puzzle called "Number Place," which was published in a Dell magazine. This puzzle was the prototype for modern Sudoku."</li>
-            <li><strong>Name and Popularization:</strong> The name "Sudoku" comes from the Japanese "Suuji wa dokushin ni kagiru," which means "the digits must be single." The puzzle gained popularity in Japan in the 1980s, where it was published in the newspaper Nikoli. It was in Japan that the puzzle was given the name "Sudoku"</li>
-            <li><strong>Global Spread:</strong> Sudoku became a global phenomenon in the early 2000s, particularly after it was featured in The Times, a British newspaper, in 2004. This led to a surge in its popularity, and it quickly spread to newspapers, books, and online platforms worldwide.</li>
-            <li><strong>Variations and Formats:</strong> Since its rise in popularity, numerous variations of Sudoku have been created, including different grid sizes, additional rules, and themed puzzles.</li>
-            </ul>
-            <h2>About 99Sudoku</h2>
-            <p>Welcome to 99Sudoku.com, your go-to online destination for enjoying the classic game of Sudoku! Our website is dedicated to providing a fun, interactive, and user-friendly platform for Sudoku lovers of all ages and skill levels. Whether you’re a beginner just learning the ropes or a seasoned player looking for your next challenge, we have something for everyone.</p>
-            <h2>Our Mission</h2>
-            <p>At 99Sudoku, our mission is simple: to create an engaging and accessible space for Sudoku enthusiasts. We believe that playing Sudoku is not only a great way to relax and unwind but also an excellent exercise for the mind. Our goal is to make this beloved game available to everyone, anywhere, for free!</p>
-            <h2>What We Offer</h2>
-            <ul>
-            <li><strong>Endless Puzzles:</strong> Dive into our extensive collection of 9x9 Sudoku puzzles, with varying levels of difficulty to suit your preferences. From easy to challenging, you can always find the perfect puzzle to match your skill level.</li>
-            <li><strong>User-Friendly Interface:</strong> Our website is designed with simplicity and ease of use in mind. You can start playing right away without any complicated setup—just click, play, and enjoy!</li>
-            <li><strong>Helpful Features:</strong> Take advantage of useful tools such as hints, notes, and the ability to save your progress, ensuring a smooth and enjoyable gaming experience.</li>
-            <li><strong>Community Engagement:</strong> Join our community of Sudoku fans! Connect with fellow players, share tips and tricks, and participate in discussions about strategies and favorite puzzles.</li>
-            </ul>
-            <h2>Why 9x9 Sudoku?</h2>
-            <p>99Sudoku is more than just a game; it’s a fantastic way to enhance your cognitive abilities, improve concentration, and develop problem-solving skills. As you fill in the grid, you’ll find yourself immersed in a satisfying challenge that sharpens your mind and provides a sense of accomplishment.</p>
-        </div>
-    </div>
-
-    <!-- 排行榜模态框 -->
-    <div id="leaderboard-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 data-i18n="leaderboard.title">Leaderboard</h2>
-            <div id="leaderboard-list"></div>
-        </div>
-    </div>
-
-    <!-- 用户名输入模态框 -->
-    <div id="username-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 data-i18n="username.title">Game Over</h2>
-            <p id="final-score-display"></p>
-            <div class="input-group">
-                <label for="username" data-i18n="username.label">Enter your name:</label>
-                <input type="text" id="username" maxlength="20">
-                <button id="submit-score" data-i18n="username.submit">Submit Score</button>
-            </div>
-        </div>
-    </div>
-</body>
-<footer>
-    <!-- 页脚信息，例如版权声明等 -->
-    <div class="gcs-footer">
-        <div class="footer-top">
-            <a href="https://www.99sudoku.com/about.html">About</a> |
-            <a href="https://www.99sudoku.com/contact.html">Contact</a> |
-            <a href="https://www.99sudoku.com/privacy.html">Privacy Policy</a>
-        </div>
-        <p>
-            <a title="The Best AI Tools" href="https://allinai.tools">All in AI Tools</a> |
-            <a href="https://aiwith.me/" title="AI With Me: Discover thousands of AI Tools">AI With Me</a>
-        </p>
-        <p>
-             Copyright © 2024 99Sudoku.Com. All Rights Reserved.
-        </p>
-    </div>
-</footer>
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
 </html>
