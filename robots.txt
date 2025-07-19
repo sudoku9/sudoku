@@ -1,8 +1,16 @@
 # Robots.txt for 99 Sudoku - Free Online Sudoku Games
-# Website: https://www.99sudoku.com
+# Website: https://99sudoku.com
 
 User-agent: *
 Allow: /
+
+# Allow all language versions
+Allow: /zh
+Allow: /de
+Allow: /it
+Allow: /fr
+Allow: /tr
+Allow: /ko
 
 # Allow all major search engines
 User-agent: Googlebot
@@ -35,7 +43,7 @@ Allow: /favicon.svg
 Allow: /manifest.json
 
 # Sitemap location
-Sitemap: https://www.99sudoku.com/sitemap.xml
+Sitemap: https://99sudoku.com/sitemap.xml
 
 # Crawl-delay for polite crawling (1 second)
 Crawl-delay: 1
